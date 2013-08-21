@@ -24,12 +24,46 @@ ul li {
 }
 
 textarea {
-  height: 140px;
-  resize: none;
+    font-family: "Source Code Pro", monospace;
+    height: 140px;
+    resize: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 0 5px 0 0;
 }
 
 input[type="checkbox"] {
-  width: auto;
+    height: 13px;
+    width: 13px;
+    vertical-align: middle;
+    border: 1px solid #9c9e9e;
+    border-radius: 3px;
+    background-color: #e5e9e9;
+    -webkit-appearance: none;
+    box-shadow: inset 0 1px 0 #fff;
+}
+
+input[type="checkbox"]:active:not(:disabled) {
+    background-color: #d3d7d7;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+input[type="checkbox"]:focus {
+    outline:none;
+    border: 1px solid #0940fd;
+    box-shadow: 0 0 0 2px #6fb5f1;
+}
+
+input[type="checkbox"]:checked:before {
+    color: #454545;
+    content: '\2713';
+    -webkit-margin-start: 0;
+    position: relative;
+    left: 1px;
+    top: -5px;
+    font-size: 16px;
 }
 
 input[type="text"] {
@@ -50,7 +84,9 @@ textarea {
 
 input[type="text"]:focus,
 textarea:focus {
-  background: #fff;
+    border: 1px solid #0055ad;
+    box-shadow: 0 0 0 2px #6fb5f1;
+    outline: none;
 }
 
 ul.controls {
@@ -134,8 +170,9 @@ h2 a:hover {
 }
 
 h3 {
-  font-size: 0.9em;
-  margin: 6px 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 6px 0;
 }
 
 .rekapi-scrubber .dragon-slider {
@@ -143,7 +180,7 @@ h3 {
 }
 
 p {
-  color: #ccc;
+  color: #454545;
   font-size: 1.0em;
   line-height: 1.4em;
   margin-bottom: 0.8em;
@@ -193,19 +230,19 @@ button#pause {
 }
 
 canvas {
-  display: block;
+    display: block;
 }
 
 #sandbox {
-  float: left;
+    float: left;
 }
 
 #scaffolding-area {
-  background: url(img/ui/bg_grid.png);
-  float: left;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
+    background: url(img/ui/bg_grid.png);
+    float: left;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
   #scaffolding-area canvas {
@@ -218,14 +255,14 @@ canvas {
   }
 
   #scaffolding-area .crosshair {
-    cursor: move;
+    cursor: hand !important;
     margin: -20px;
     position: absolute;
     top: 180px;
   }
 
     .crosshair .dashmark {
-      background: #0c0;
+      background: #1461FC;
       height: 2px;
       left: 0;
       position: absolute;
@@ -255,7 +292,7 @@ canvas {
 
     #control-pane h2,
     #control-pane h3 {
-        color: #0083e8;
+        color: #454545;
     }
 
     #control-pane .millisecond-input {
@@ -296,7 +333,8 @@ canvas {
     }
 
     #control-pane .keyframe h3 {
-      cursor: pointer;
+        color: #0083e8;
+        cursor: pointer;
     }
 
     #control-pane .keyframe:first-child h3 {
@@ -343,7 +381,7 @@ canvas {
 
     #control-pane .pinned-button-array label,
     #control-pane .pinned-button-array button {
-      color: #aaa;
+      color: rgba(0, 0, 0, 0.6);
     }
 
     #control-pane .pinned-button-array span {
@@ -418,11 +456,7 @@ canvas {
   #control-pane input.full-width {
     display: block;
     margin-top: 6px;
-    width: 288px;
-  }
-
-  #control-pane textarea {
-    width: 292px;
+    width: 280px;
   }
 
   #control-pane .quality-slider {
@@ -443,28 +477,23 @@ canvas {
     }
 
     #control-pane .quality-slider .dragon-slider {
-      background: none;
-      border: solid 1px #fff;
-      height: 13px;
-      margin: 26px auto 0;
-      width: 290px !important;
+        background-color: #d3d7d7;
+        border: 1px solid #9c9e9e;
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.12);
+        height: 5px;
+        margin: 26px auto 0;
+        width: 290px !important;
     }
 
     #control-pane .quality-slider .dragon-slider button {
-      background: #fff;
-      height: 14px;
-      width: 14px;
-
-      /* Overrides styles from Rekapi Controls.
-       *
-       * TODO: These style should not need to be overridden, the selectors in
-       * Rekapi Controls are not scoped properly.
-       */
-      -moz-box-shadow: none;
-      -ms-box-shadow: none;
-      -o-box-shadow: none;
-      -webkit-box-shadow: none;
-      box-shadow: none;
+        background: #e5e9e9;
+        border: 1px solid #9c9e9e;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 0 #fff;    
+        cursor: hand !important;
+        height: 17px;
+        width: 10px;
+        top: -7px !important;
     }
 
   #control-pane input.quarter-width {
@@ -502,7 +531,7 @@ canvas {
   }
 
   #keyframe-controls h3:after {
-    color: #aaa;
+    color: #454545;
     content: 'ms';
     margin-left: 2px;
   }
@@ -527,7 +556,9 @@ canvas {
     border: 1px solid #9C9E9E;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
     margin: 20px;
+/*
     overflow: hidden;
+*/
     position: absolute;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -537,7 +568,7 @@ canvas {
   .pane .pane-handle {
     background: #d4d7d7;
     box-shadow: inset 0 1px 0 #f7f7f7;
-    cursor: move;
+    cursor: hand !important;
     height: 8px;
   }
 
@@ -587,27 +618,28 @@ canvas {
         color: #454545;
         font-weight: 400;
     }
-    
+
     .tabs li.tabs-active {
         background: #DFE2E2;
         border: 1px solid #B4B7B7;
         border-bottom: solid 1px #DFE2E2;
         box-shadow: inset 0 1px 0 #fff;
+        line-height: 27px;
         top: 1px;
     }
-    
+
     .tabs li.tabs-active a {
       color: #000;
     }
-    
+
     .tabs li:first-child {
     margin-left: 6px;
     }
-    
+
     .tabs li:last-child {
     margin-right: 0;
     }
-    
+
     .tabs li a {
     padding: 0px 4px;
     }
@@ -636,7 +668,7 @@ canvas {
 }
 
   #html-input textarea {
-    margin-top: 18px;
+    margin-top: 9px;
   }
 
 #top-level-alert {
