@@ -66,7 +66,7 @@ require([
   app.$el.animationIteration = $('#iterations');
 
   var halfCrossHairHeight = $('#crosshairs .crosshair:first').height() / 2;
-  var crosshairStartingY = ($win.height() / 2) - halfCrossHairHeight;
+  var crosshairStartingY = 0; // ($win.height() / 2) - halfCrossHairHeight;
 
   app.kapi = new Kapi({
     'context': document.getElementById('rekapi-canvas')
