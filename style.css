@@ -329,12 +329,14 @@ canvas {
     #control-pane .keyframe {
         border-top: 1px solid #ccc;
         clear: left;
-        margin-top: 12px;
+        margin-top: 0;
+        margin-left: 27px;
     }
 
     #control-pane .keyframe h3 {
         color: #0083e8;
         cursor: pointer;
+        margin-left: -27px;
     }
 
     #control-pane .keyframe:first-child h3 {
